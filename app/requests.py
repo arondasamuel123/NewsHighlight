@@ -1,15 +1,18 @@
 import urllib.request,json
-from .models import Sources
+from .models import Sources,Articles
+from datetime import date
 
 
 api_key = 'None'
 
 base_url = 'None'
+article_base_url = 'None'
 
 def configure_request(app):
     global api_key, base_url
     api_key = app.config['API_KEY']
     base_url = app.config['SOURCE_API_URL']
+    article_base_url = app.config['ARTICLE_API_URL']
     
 
 def get_sources(category):
@@ -52,4 +55,41 @@ def process_sources(source_response_list):
             sources_results.append(source_object)
             # print(sources_results)
     return sources_results
+
+
+def get_articles(source_id):
+    get_articles_url = article_base_url.format(source_id, api_key)
+    print(get_articles_url)
+    with urllib.request.urlopen(get_articles_url) as url:
+        article_data = url.read()
+        article_response = json.loads(article_data)
+        
+        article_results= None
+        
+        if article_response['articles']:
+            article_response_list = article_response['articles']
+            article_results = process_articles(article_response_list)
+            
+    return article_results
+
+def process_articles(art_response_list):
+    
+    article_results = []
+    for article_item in art_response_list:
+        author = article_item.get('author')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        image_url = article_item.get('urlToImage')
+        publishedAt = article_item.get('publishedAt')
+    
+        if url:
+            articles_object = Articles(author, title, description, url, image_url, publishedAt)
+            articles_results.append(articles_object)
+    return articles_results
+
+
+        
+        
+            
     
