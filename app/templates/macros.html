@@ -1,0 +1,20 @@
+{% macro displayList(source_response_list)%}
+
+    {%for source in source_response_list%}
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-white bg-primary">
+            <div class="card-body">
+              <h5 class="card-title">{{source.name|truncate(150)}}</h5>
+              <p class="card-text">{{source.description}}</p>
+              <a href="{{source.url}}">{{source.url}}</a>
+              <a href="#" class="btn btn-primary">Read Articles</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    {%endfor%}
+
+{%endmacro%}
