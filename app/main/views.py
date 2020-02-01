@@ -4,4 +4,9 @@ from . import main
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    '''
+    Root page function 
+    '''
+    general_news = get_sources('general')
+    print(general_news)
+    return render_template('index.html', general=general_news)
