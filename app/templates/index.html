@@ -1,4 +1,5 @@
 {% import 'macros.html' as macro%}
+{%extends 'base.html'%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +9,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HELLO NEWS. LET'S GET STARTED</h1>
-
+   
+    {%block content %}
+    <h2 align="center">Please select a news source of choice</h2>
     <h3>General News</h3>
+    <div class="row">
+    <div class="col-md-12">
     {{macro.displayList(general)}}
+    </div>
+</div>
+
+<div class="col-md-12">
+    <h3>Business News</h3>
+    {{macro.displayList(business)}}
+    </div>
+</div>
+<div class="col-md-12">
+    <h3>Sports News</h3>
+    {{macro.displayList(sports)}}
+    </div>
+</div>
+    
+    {%endblock%}
 </body>
 </html>

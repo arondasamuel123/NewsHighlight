@@ -9,5 +9,7 @@ def index():
     Root page function 
     '''
     general_news = get_sources('general')
+    business_news = get_sources('business')
+    sports_news = get_sources('sports')
     print(general_news)
-    return render_template('index.html', general=general_news)
+    return render_template('index.html', general=general_news, business = business_news, sports = sports_news)
