@@ -7,4 +7,13 @@ class Sources:
         self.category = category
         self.language = language
         
+
+class Articles:
+    def __init__(self, author, title, description, url, image_url, publishedAt):
+        self.author = author
+        self.title = title
+        self.description = description
+        self.url = url 
+        self.image_url = url
+        self.publishedAt = publishedAt
         
