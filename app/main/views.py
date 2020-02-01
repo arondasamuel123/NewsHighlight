@@ -19,4 +19,6 @@ def fetch_articles(source_id):
     '''
     Fetch articles based on the source id
     '''
+    articles = get_articles(source_id)
     
+    return render_template('articles.html', articles = articles)

@@ -1,0 +1,17 @@
+<div class="row">
+
+    <h1>Articles</h1>
+    <hr>
+
+    {% if reviews %}
+        {{macro.displayArticles(articles)}}
+
+    {% else%}
+        <h3 class="text-center">No articles for this source </h3>
+
+    {% endif %}
+
+</div>
+
+</div>
+{% endblock %}
