@@ -10,11 +10,12 @@ class Sources:
         
 
 class Articles:
-    def __init__(self, author, title, description, url, image_url, publishedAt):
+    def __init__(self, author, title, description, article_url, image_url, publishedAt):
         self.author = author
         self.title = title
         self.description = description
-        self.url = url 
-        self.image_url = url
+        self.article_url = article_url 
+        self.image_url = image_url
         self.publishedAt = publishedAt
+    
         

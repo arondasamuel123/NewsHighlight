@@ -1,18 +1,18 @@
 import urllib.request,json
 from .models import Sources,Articles
-from datetime import date
+
 
 
 api_key = 'None'
 
 base_url = 'None'
-article_base_url = 'None'
+
 
 def configure_request(app):
     global api_key, base_url
     api_key = app.config['API_KEY']
     base_url = app.config['SOURCE_API_URL']
-    article_base_url = app.config['ARTICLE_API_URL']
+   
     
 
 def get_sources(category):
@@ -57,38 +57,44 @@ def process_sources(source_response_list):
     return sources_results
 
 
-def get_articles(source_id):
-    get_articles_url = article_base_url.format(source_id, api_key)
-    print(get_articles_url)
-    with urllib.request.urlopen(get_articles_url) as url:
-        article_data = url.read()
-        article_response = json.loads(article_data)
+def get_articles(news_id):
+    get_article_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(news_id, api_key)
+    print(get_article_url)
+    with urllib.request.urlopen(get_article_url) as url:
+        response_data = url.read()
+        # print(response_data)
+        response = json.loads(response_data)
         
-        article_results= None
+        articles = None
         
-        if article_response['articles']:
-            article_response_list = article_response['articles']
-            article_results = process_articles(article_response_list)
+        if response['articles']:
+            articles_response_list = response['articles']
+            # print(articles_response_list)
             
-    return article_results
+            
+    return articles_response_list
 
-def process_articles(art_response_list):
+# def process_response(articles_response_list):
     
-    article_results = []
-    for article_item in art_response_list:
-        author = article_item.get('author')
-        title = article_item.get('title')
-        description = article_item.get('description')
-        url = article_item.get('url')
-        image_url = article_item.get('urlToImage')
-        publishedAt = article_item.get('publishedAt')
+#     articles = []
+#     for article_item in articles_response_list:
+#         author = article_item.get('author')
+#         title = article_item.get('title')
+#         description = article_item.get('description')
+#         article_url = article_item.get('url')
+#         image_url = article_item.get('urlToImage')
+#         publishedAt = article_item.get('publishedAt')
+        
+#         if image_url:
+#             articles_object = Articles(author, title, description, article_url, image_url, publishedAt)
+#             articles.append(articles_object)
+#             # print(type(articles))
+#     return articles_object
+             
     
-        if url:
-            articles_object = Articles(author, title, description, url, image_url, publishedAt)
-            articles_results.append(articles_object)
-    return articles_results
+            
 
-
+        
         
         
             

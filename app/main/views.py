@@ -11,14 +11,14 @@ def index():
     general_news = get_sources('general')
     business_news = get_sources('business')
     sports_news = get_sources('sports')
-    print(general_news)
+    # print(general_news)
     return render_template('index.html', general=general_news, business = business_news, sports = sports_news)
 
-@main.route('/articles/<source_id>')
-def fetch_articles(source_id):
+@main.route('/articles/<news_id>')
+def fetch_articles(news_id):
     '''
     Fetch articles based on the source id
     '''
-    articles = get_articles(source_id)
-    
+    articles = get_articles(news_id)
+    #print(articles)
     return render_template('articles.html', articles = articles)
