@@ -1,19 +1,20 @@
 {% macro displayList(source_response_list)%}
 
     {%for source in source_response_list%}
-    <div class="row col-12"style="float:right">
-    
-        <div class="col-sm-6">
-          <div class="card text-white bg-warning" style="width: 18rem;">
-            <div class="card-body">
-              <h3 class="card-title">{{source.name|truncate(10)}}</h3>
-              
-              <a href="{{source.url}}">{{source.url}}</a>
-              <a href="/articles/{{source.news_id}}" class="btn btn-primary">Read Articles</a>
-            </div>
-          </div>
-        </div>
+    <div class="container">
 
+      <!-- Poster background -->
+      <div class="row">
+  
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 news-details">
+              <h3>{{ source.name }}</h3>
+  
+              <p class="overview"> {{ source.description }}</p>
+              <a class="btn btn-warning"  href="/articles/{{source.news_id}}"> Read Articles</a>
+  
+  
+          </div>
+      </div>
         
         
       </div>
