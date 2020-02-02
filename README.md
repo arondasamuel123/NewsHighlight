@@ -13,8 +13,7 @@ Samuel Aronda
 
 [![codebeat badge](https://codebeat.co/badges/0457828b-52fa-4b7a-abbe-bdb79a4189f7)](https://codebeat.co/projects/github-com-arondasamuel123-newshighlight-master)
 
-## Usage
-![](static/images/filename%20screenshotone.png)
+
 
 ## Installation
     Place your api key in the start.sh
