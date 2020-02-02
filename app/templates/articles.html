@@ -1,17 +1,34 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-{%block content %}
-<div class="row">
 
-                <h1>Articles</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News Highlights</title>
+
+   
+</head>
+<body>
+
+    
+    {%block content %}
+    
+        <h1 align="center" style="color: #0a369d;">Articles</h1>
     <hr>
 
    
         {{macro.displayArticles(articles)}}
 
        
+        {% endblock %}
 
+    </div>
 </div>
+</div>
+</body>
+</html>
 
-</div>
-{% endblock %}
+
