@@ -11,18 +11,22 @@ Samuel Aronda
 
 ## CodeBeats Badge
 
+[![codebeat badge](https://codebeat.co/badges/0457828b-52fa-4b7a-abbe-bdb79a4189f7)](https://codebeat.co/projects/github-com-arondasamuel123-newshighlight-master)
 
-
+## Usage
+![](static/images/filename%20screenshotone.png)
 
 ## Installation
-
+    Place your api key in the start.sh
 ```bash
-
+    git clone https://github.com/arondasamuel123/PasswordLocker.git
+    cd PasswordLocker
+    $ ./start.sh
 ```
 ## Test class
 
 ```bash
-
+    $ python3.6 serve.py test
 ```
 
 ## Contributing
@@ -35,6 +39,9 @@ Please make sure to update tests as appropriate.
     Python Shell
     Python 3.6
     Flask 
+    Bootstrap
+    HTML
+    CSS
 
 
 
