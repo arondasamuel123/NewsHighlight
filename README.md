@@ -46,6 +46,7 @@ Please make sure to update tests as appropriate.
 
 
 ## License
+[LICENSE](LICENSE)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
