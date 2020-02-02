@@ -9,7 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>News Highlights</title>
 
-   
+    {% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    {% endblock %}
 </head>
 <body>
 

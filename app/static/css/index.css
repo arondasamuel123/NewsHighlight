@@ -2,3 +2,7 @@ body{
     font-family: 'Fredoka One', cursive;
      background-color:#c9dcea;
 }
+.imgdiv{ 
+    position: relative;
+    left: 600px;
+}
